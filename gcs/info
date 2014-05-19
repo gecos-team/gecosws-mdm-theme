@@ -1,0 +1,25 @@
+# YAML 1.1
+# Fichero de configuración de paquetes de personalización de Gecos v2
+
+# Nombre del paquete (minúsculas-separado-con-guiones)
+name: gecosws-mdm-theme
+
+# Autor 
+author: David Amian <damian@emergya.com>
+
+# Priority
+priority: optional
+
+# Section
+section: metapackages
+
+shortdesc: "Gecos v2 MDM theme"
+
+longdesc: "This package contains every GECOS v2 MDM themek file."
+
+# Versión del paquete
+version: 2.0
+
+# Cambios en esta versión
+changes:
+    - initial release
