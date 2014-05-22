@@ -95,6 +95,14 @@ function mdm_noecho(message) {
 
 // Called by MDM to show a message (usually "Please enter your username")
 function mdm_msg(message) {			
+    if (message != "") {
+        document.getElementById("message").style.display = 'block';
+        document.getElementById("notify_area_message").style.display = 'block';
+    }
+    else {
+        document.getElementById("message").style.display = 'none';
+        document.getElementById("notify_area_message").style.display = 'none';
+    }
 	document.getElementById("message").innerHTML = message;
 }
 
