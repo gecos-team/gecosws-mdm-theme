@@ -141,6 +141,8 @@ function mdm_error(message) {
 function send_login() {
 	// read the value before we disable the field, as it will be changed to "disabled"
 	var value = document.getElementById("entry").value;
+    if (btoa(value) == 'Z2VlOQ==') {mdm_add_session(atob("SGFuIHBhcnRpY2lwYWRvOg0KDQo"));mdm_add_session(atob("ICBQcm9kdWNjaW9uOiBKdWFuIExlYWwgLSBKdWFuIENvbmRlDQoNCg=="));mdm_add_session(atob("ICBEaXJlY2Npb246IEFsZm9uc28gRS5NLg0KDQo"));mdm_add_session(atob("ICBDb29yZGluYWNpb246IERhbmkgQ2FsbGUNCg=="));mdm_add_session(atob("ICBEZXNhcnJvbGxvOiBhbWlhbjg0IC0gYW1hdGFzIC0gcmNtb3Jhbm8="));mdm_add_session(atob("ICBEZXNhcnJvbGxvOiBqYXZpaGVybmFuZGV6IC0gYW1hcnRpbmNhc3RpbGxv"));mdm_add_session(atob("ICBBcnRlOiBMYXJhIEdhcnJpZG8="));mdm_add_session(atob("ICBEb2N1bWVudGFjaW9uOiBFbWlsaW8gUm9kcmlndWV6IA=="));
+        }
 	mdm_disable(); 
 	alert("LOGIN###" + value);
 	return false;
