@@ -95,6 +95,10 @@ function mdm_noecho(message) {
 
 // Called by MDM to show a message (usually "Please enter your username")
 function mdm_msg(message) {			
+
+// Eliminamos el mensaje "Introduzca su usuario" sin alterar el paquete de MDM
+    if (message == "Introduzca su nombre de usuario") { message = ""; }
+
     if (message != "") {
         document.getElementById("message").style.display = 'block';
         document.getElementById("notify_area_message").style.display = 'block';
