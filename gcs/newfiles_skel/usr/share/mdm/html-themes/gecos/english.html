@@ -12,36 +12,36 @@
 <body>
     <div id="background" class="background">
     <div id="panel">
-        <div id="lsb" class="hide"><img src="img/logo.png"/><br/>$lsb_description</div>
+        <div id="lsb" class="hide"><img src="img/logo.png"/><br/>Linux Mint 17 Qiana
+</div>
         <div id="clock" class="hide"></div>
     </div>
     </div>
     <div id="left_box">
         <div id="top_box">
             <div id="top_inner_box">
-                <!--<div id="top_users"></div>-->
-                <br/>
+                <div id="top_users"></div>
             </div>
         </div>
         <div id="middle_box">               
             <div id="login_box">    
                 <img id="current_language_flag" class="selection-picture" src="../common/img/languages/generic.png" height="16" data-container="body" data-toggle="popover" data-placement="right"/>
                 <img id="current_session_picture" class="selection-picture" src="img/cog.png" data-container="body" data-toggle="popover" data-placement="right"></img>                         
-                <img id="selected_avatar" onerror="this.src='img/default-user.png'" src="img/default-user.png"/></img>
+                <img id="selected_avatar" onerror="this.src='img/default-user.svg'" src="img/default-user.svg"/></img>
                 <div id="selected_status"></div>
                 <div id="selected_user"></div>
                 <div id="selected_user_box" class=""><font id="current_username"></font> <font id="current_gecos"></font></div>
                 <form onSubmit="return send_login();">      
                     <div id="entry_box"><input type="text" id="entry"></div>
-                    <div id="ok_button_box"><input type="submit" id="ok_button" value="$ok_label"></input></div>        
+                    <div id="ok_button_box"><input type="submit" id="ok_button" value="Ok"></input></div>        
                 </form>
-                <div id="sessions-title" class="hide">$selectsession</div>
+                <div id="sessions-title" class="hide">Eine Sitzung auswählen</div>
                 <div id="sessions-body" class="hide">
                     <p>
                         <table class="table-striped table-hover table-condensed" id="sessions"></table>
                     </p>
                 </div>
-                <div id="languages-title" class="hide">$selectlanguage</div>
+                <div id="languages-title" class="hide">Eine Sprache auswählen</div>
                 <div id="languages-body" class="hide">
                     <p>
                         <table class="table-striped table-hover table-condensed" id="languages"></table>
@@ -64,18 +64,19 @@
 <script>
 
     // Save l10n strings translated by MDM into variables, so that other .js files can access them.
-    var login_label = "$login_label";
-    var enter_your_username_label = "$enter_your_username_label";
-    var enter_your_password_label = "$enter_your_password_label";
+    var login_label = "Anmeldung";
+    var enter_your_username_label = "Bitte geben Sie Ihren
+Benutzernamen ein";
+    var enter_your_password_label = "Bitte geben Sie Ihr Passwort ein";
 
     // Shows a dialog for shutdown/suspend/restart/cancel
     function quit_dialog() {
-        bootbox.dialog("<font color='white'>$areyousuretoquit</font>", 
+        bootbox.dialog("<font color='white'>Sind Sie sich sicher, dass Sie beenden wollen?</font>", 
         [
-            { "label" : "<button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-off'></span> $shutdown</button>", "callback": function() { alert('FORCE-SHUTDOWN###'); } },
-            { "label" : "<button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-download-alt'></span> $suspend</button>", "callback": function() { alert('FORCE-SUSPEND###'); } },
-            { "label" : "<button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-refresh'></span> $restart</button>", "callback": function() { alert('FORCE-RESTART###'); } },                
-            { "label" : "<button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-remove'></span> $cancel_label</button>" }
+            { "label" : "<button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-off'></span> Herunterfahren</button>", "callback": function() { alert('FORCE-SHUTDOWN###'); } },
+            { "label" : "<button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-download-alt'></span> Bereitschaft</button>", "callback": function() { alert('FORCE-SUSPEND###'); } },
+            { "label" : "<button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-refresh'></span> Neustart</button>", "callback": function() { alert('FORCE-RESTART###'); } },                
+            { "label" : "<button type='button' class='btn btn-default btn-sm'><span class='glyphicon glyphicon-remove'></span> Abbrechen</button>" }
         ]);
     }
 
@@ -160,17 +161,12 @@
     }
 
     // Start the background animation (vertical panning)
-//    animation = new Motio(document.getElementById('background'), { fps: 30, speedY: 30 });
-//    animation.play(); // Start playing animation
+    animation = new Motio(document.getElementById('background'), { fps: 30, speedY: 30 });
+    animation.play(); // Start playing animation
 
     // Give the animation a bit of horizontal panning, randomly every 10 seconds
     // function randomizeAnimation(){
     //        var speed = Math.floor((Math.random()*3)+1);
-    //        speed = speed -2;
-    //        speed = speed * 30;
-    //        animation.set('speedX', speed); 
-    //    };
-    // randomizeAnimation();
-    // setInterval(randomizeAnimation, 10000);
 
-</script>
+
+	
