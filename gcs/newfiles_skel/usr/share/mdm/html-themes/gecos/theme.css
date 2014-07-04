@@ -16,10 +16,10 @@ body {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
 	background-color: #000000;
 	margin: 0px;
 	overflow: hidden;
@@ -42,6 +42,11 @@ a:focus {
 	width: 100%;
 	height: 100%;
 	background: url('bg.jpg');	
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+
 }
 
 #panel {
@@ -57,7 +62,7 @@ a:focus {
 #left_box {	
 	display:table;
 	position: fixed;	
-	width: 50%;
+	width: 100%;
 	height: 100%;
 }
 
@@ -65,7 +70,8 @@ a:focus {
 	position:relative;
 	width: 400px;
 	height: 170px;
-	margin-left: 80px;
+/*	margin-left: 80px;*/
+	margin: auto auto;
 	box-shadow: 0 1px 10px rgba(0, 0, 0, .4);
 	background: -webkit-linear-gradient(top, #dedede, #d6d6d6 5%, #d6d6d6);
 	color: #3c3c3c;
@@ -93,7 +99,8 @@ a:focus {
 }
 
 #middle_box {
-	height: 170px;
+/*	height: 170px;*/
+	height: 100%;
 	width: 100%;
 }
 
@@ -177,8 +184,8 @@ a:focus {
 
 #current_username {	
 	font-family: "Raleway Light";	
-	font-size:30px;
-	line-height: 40px;	
+	font-size: 20px;
+	line-height: 5px;	
 	font-weight:400;
 	text-shadow: none;
 }

@@ -22,6 +22,14 @@ function mdm_enable() {
 // Called by MDM to set the welcome message
 function set_welcome_message(message) {         
     //document.getElementById("welcome_message").innerHTML = message;
+    if (message != "") {
+        document.getElementById("timed").style.display = 'block';
+    }
+    else {
+        document.getElementById("timed").style.display = 'none';
+    }           
+    document.getElementById("timed").innerHTML = "welcome " + message;           
+
 }
 
 // Called by MDM to update the clock
@@ -32,8 +40,9 @@ function set_clock(message) {
 // Called by MDM to allow the user to input a username      
 function mdm_prompt(message) {  
     mdm_enable();
-    document.getElementById("current_username").innerHTML = login_label;
-    document.getElementById("selected_status").innerHTML = enter_your_username_label;
+    document.getElementById("current_username").innerHTML = message;
+    //document.getElementById("current_username").innerHTML = login_label;
+    //document.getElementById("selected_status").innerHTML = enter_your_username_label;
     document.getElementById("selected_avatar").src = "img/default-user.png";
 
     for (var i=0;i<num_users;i++) {
@@ -52,11 +61,30 @@ function mdm_noecho(message) {
     document.getElementById("entry").value = "";
     document.getElementById("entry").type = "password";
     document.getElementById("entry").focus();
+    if (message == "Current Password: ") {
+      document.getElementById("current_username").innerHTML = "Contraseña actual:";
+    }
+    else {
+      document.getElementById("current_username").innerHTML = message;
+    }
 }
 
 // Called by MDM to show a message (usually "Please enter your username")
 function mdm_msg(message) {         
     //document.getElementById("message").innerHTML = message;           
+    if (message != "") {
+        document.getElementById("timed").style.display = 'block';
+    }
+    else {
+        document.getElementById("timed").style.display = 'none';
+    }
+    if (message == "Password expired. Change your password now.") {
+        document.getElementById("timed").innerHTML = "Su contraseña ha caducado. Debe cambiarla en este momento";
+    }
+    else {           
+        document.getElementById("timed").innerHTML = message;           
+    }
+
 }
 
 // Called by MDM to show a timed login countdown
@@ -67,7 +95,7 @@ function mdm_timed(message) {
     else {
         document.getElementById("timed").style.display = 'none';
     }           
-    document.getElementById("timed").innerHTML = message;           
+    document.getElementById("timed").innerHTML = "timed: " + message;           
 }
 
 // Called by MDM to show an error       
@@ -220,6 +248,7 @@ function mdm_set_current_session(session_name, session_file)    {
 }
 
 function mdm_set_current_user(username) {
+    return;
     document.getElementById("current_username").innerHTML = "";
     document.getElementById("selected_status").innerHTML = "";
     var user_found = false;
