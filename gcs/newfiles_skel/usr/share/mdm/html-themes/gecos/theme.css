@@ -127,8 +127,8 @@ a:focus {
 #right-box {
 	position: fixed;
 	right: 0px;
-	vertical-align: middle;
-	height: 100%;	
+	vertical-align: top;
+	height: 30%;	
 	width: 50%;	
 }
 
